@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vagas – Vaga Local</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="acessibilidade.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-brand">
+    <span class="nav-icon">&#9670;</span>
+    <span class="nav-title">VAGA<span class="green">LOCAL</span></span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Início</a></li>
+    <li><a href="vagas.html" class="active">Vagas</a></li>
+    <li><a href="cadastro.html">Cadastro</a></li>
+    <li><a href="sobre.html">Sobre</a></li>
+    <li><a href="login.html" class="btn-nav">Entrar</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <h1>Vagas Disponíveis</h1>
+  <p>Encontre a oportunidade certa para você na sua região</p>
+</div>
+
+<!-- Filtros -->
+<section class="filter-bar">
+  <div class="filter-inner">
+    <div class="filter-group">
+      <label>&#128269; Buscar</label>
+      <input type="text" placeholder="Cargo, empresa ou cidade..." class="filter-input"/>
+    </div>
+    <div class="filter-group">
+      <label>&#127970; Área</label>
+      <select class="filter-input">
+        <option value="">Todas as áreas</option>
+        <option>Tecnologia</option>
+        <option>Construção</option>
+        <option>Administrativo</option>
+        <option>Saúde</option>
+        <option>Alimentação</option>
+        <option>Logística</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label>&#128205; Cidade</label>
+      <select class="filter-input">
+        <option value="">Todas as cidades</option>
+        <option>Cornélio Procópio</option>
+        <option>Bandeirantes</option>
+        <option>Uraí</option>
+        <option>Leópolis</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label>&#128203; Tipo</label>
+      <select class="filter-input">
+        <option value="">Todos</option>
+        <option>CLT</option>
+        <option>PJ</option>
+        <option>Estágio</option>
+      </select>
+    </div>
+    <button class="btn-primary" style="align-self:flex-end;">Filtrar</button>
+  </div>
+</section>
+
+<!-- Lista de Vagas -->
+<section class="section">
+  <p class="results-count">&#9670; <strong>7 vagas</strong> encontradas</p>
+  <div class="vagas-list">
+
+    <a href="vaga-detalhe.html?id=dev" class="vaga-list-card">
+      <div class="vlc-icon">&#128187;</div>
+      <div class="vlc-body">
+        <div class="vlc-top">
+          <h3>Desenvolvedor de Software</h3>
+          <span class="vc-badge new">Novo</span>
+        </div>
+        <p class="vc-empresa">&#127970; TechCorp Solutions &nbsp;|&nbsp; &#128205; Remoto / Cornélio Procópio</p>
+        <div class="vc-tags">
+          <span>Full Stack</span><span>CLT</span><span>R$ 4.000–7.000/mês</span><span>Remoto</span>
+        </div>
+      </div>
+      <div class="vlc-action">Ver Vaga &#8594;</div>
+    </a>
+
+    <a href="vaga-detalhe.html?id=pintor" class="vaga-list-card">
+      <div class="vlc-icon">&#127968;</div>
+      <div class="vlc-body">
+        <div class="vlc-top">
+          <h3>Pintor de Casas e Edifícios</h3>
+          <span class="vc-badge urgent">Urgente</span>
+        </div>
+        <p class="vc-empresa">&#127970; ReformaMax Serviços &nbsp;|&nbsp; &#128205; Cornélio Procópio – PR</p>
+        <div class="vc-tags">
+          <span>Pintura</span><span>PJ/CLT</span><span>R$ 1.800–2.500/mês</span><span>Presencial</span>
+        </div>
+      </div>
+      <div class="vlc-action">Ver Vaga &#8594;</div>
+    </a>
+
+    <a href="vaga-detalhe.html?id=admin" class="vaga-list-card">
+      <div class="vlc-icon">&#128188;</div>
+      <div class="vlc-body">
+        <div class="vlc-top">
+          <h3>Assistente Administrativo</h3>
+          <span class="vc-badge pop">Popular</span>
+        </div>
+        <p class="vc-empresa">&#127970; Contábil Plus &nbsp;|&nbsp; &#128205; Bandeirantes – PR</p>
+        <div class="vc-tags">
+          <span>Administrativo</span><span>CLT</span><span>R$ 1.500–2.200/mês</span><span>Híbrido</span>
+        </div>
+      </div>
+      <div class="vlc-action">Ver Vaga &#8594;</div>
+    </a>
+
+    <a href="vaga-detalhe.html?id=enfermeiro" class="vaga-list-card">
+      <div class="vlc-icon">&#10084;&#65039;</div>
+      <div class="vlc-body">
+        <div class="vlc-top">
+          <h3>Técnico de Enfermagem</h3>
+          <span class="vc-badge new">Novo</span>
+        </div>
+        <p class="vc-empresa">&#127970; Clínica VidaSaúde &nbsp;|&nbsp; &#128205; Cornélio Procópio – PR</p>
+        <div class="vc-tags">
+          <span>Saúde</span><span>CLT</span><span>R$ 2.000–2.800/mês</span><span>Presencial</span>
+        </div>
+      </div>
+      <div class="vlc-action">Ver Vaga &#8594;</div>
+    </a>
+
+    <a href="vaga-detalhe.html?id=motorista" class="vaga-list-card">
+      <div class="vlc-icon">&#128663;</div>
+      <div class="vlc-body">
+        <div class="vlc-top">
+          <h3>Motorista Entregador</h3>
+          <span class="vc-badge urgent">Urgente</span>
+        </div>
+        <p class="vc-empresa">&#127970; LogiRápido Transportes &nbsp;|&nbsp; &#128205; Região Norte do PR</p>
+        <div class="vc-tags">
+          <span>Logística</span><span>PJ</span><span>R$ 1.700–2.300/mês</span><span>Presencial</span>
+        </div>
+      </div>
+      <div class="vlc-action">Ver Vaga &#8594;</div>
+    </a>
+
+    <a href="vaga-detalhe.html?id=cozinheiro" class="vaga-list-card">
+      <div class="vlc-icon">&#127860;</div>
+      <div class="vlc-body">
+        <div class="vlc-top">
+          <h3>Auxiliar de Cozinha</h3>
+          <span class="vc-badge pop">Popular</span>
+        </div>
+        <p class="vc-empresa">&#127970; Restaurante Sabor da Terra &nbsp;|&nbsp; &#128205; Uraí – PR</p>
+        <div class="vc-tags">
+          <span>Alimentação</span><span>CLT</span><span>R$ 1.400–1.800/mês</span><span>Presencial</span>
+        </div>
+      </div>
+      <div class="vlc-action">Ver Vaga &#8594;</div>
+    </a>
+
+    <a href="vaga-detalhe.html?id=eletricista" class="vaga-list-card">
+      <div class="vlc-icon">&#9889;</div>
+      <div class="vlc-body">
+        <div class="vlc-top">
+          <h3>Eletricista Residencial</h3>
+          <span class="vc-badge new">Novo</span>
+        </div>
+        <p class="vc-empresa">&#127970; EletroServ &nbsp;|&nbsp; &#128205; Cornélio Procópio – PR</p>
+        <div class="vc-tags">
+          <span>Elétrica</span><span>PJ</span><span>R$ 2.200–3.500/mês</span><span>Presencial</span>
+        </div>
+      </div>
+      <div class="vlc-action">Ver Vaga &#8594;</div>
+    </a>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="nav-icon">&#9670;</span>
+      <span class="nav-title">VAGA<span class="green">LOCAL</span></span>
+      <p>Conectando talentos locais desde 2025.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Navegação</h4>
+      <a href="index.html">Início</a>
+      <a href="vagas.html">Vagas</a>
+      <a href="cadastro.html">Cadastro</a>
+      <a href="login.html">Login</a>
+      <a href="sobre.html">Sobre</a>
+    </div>
+    <div class="footer-team">
+      <h4>Equipe – Grupo 01</h4>
+      <p>Everton Freitas de Araújo</p>
+      <p>Victor Huggo Ferreira Marcelino</p>
+      <p>Rodolfo Depieri Gindri</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 VagaLocal · ODS 8 – Trabalho Decente e Crescimento Econômico</p>
+  </div>
+</footer>
+
+</body>
+</html>
