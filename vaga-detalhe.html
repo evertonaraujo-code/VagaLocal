@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detalhes da Vaga – Vaga Local</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="acessibilidade.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-brand">
+    <span class="nav-icon">&#9670;</span>
+    <span class="nav-title">VAGA<span class="green">LOCAL</span></span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Início</a></li>
+    <li><a href="vagas.html" class="active">Vagas</a></li>
+    <li><a href="cadastro.html">Cadastro</a></li>
+    <li><a href="sobre.html">Sobre</a></li>
+    <li><a href="login.html" class="btn-nav">Entrar</a></li>
+  </ul>
+</nav>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+  <a href="index.html">Início</a> &#8250; <a href="vagas.html">Vagas</a> &#8250; <span id="bc-title">Carregando...</span>
+</div>
+
+<!-- Conteúdo dinâmico -->
+<div class="detalhe-layout">
+
+  <!-- PAINEL ESQUERDO: Info principal -->
+  <main class="detalhe-main">
+    <div class="detalhe-hero">
+      <div class="dh-icon" id="d-icon">&#128187;</div>
+      <div class="dh-info">
+        <h1 id="d-titulo">Carregando...</h1>
+        <p class="d-empresa" id="d-empresa"></p>
+        <p class="d-local" id="d-local"></p>
+        <div class="vc-tags" id="d-tags"></div>
+      </div>
+      <span class="vc-badge" id="d-badge"></span>
+    </div>
+
+    <div class="detalhe-section">
+      <h2>&#128221; Descrição da Vaga</h2>
+      <p id="d-descricao"></p>
+    </div>
+
+    <div class="detalhe-section">
+      <h2>&#9989; Requisitos</h2>
+      <ul id="d-requisitos" class="req-list"></ul>
+    </div>
+
+    <div class="detalhe-section">
+      <h2>&#127775; Benefícios</h2>
+      <div id="d-beneficios" class="ben-grid"></div>
+    </div>
+
+    <div class="detalhe-section">
+      <h2>&#128203; Responsabilidades</h2>
+      <ul id="d-responsabilidades" class="req-list"></ul>
+    </div>
+
+    <a href="cadastro.html" class="btn-primary btn-candidatar">
+      &#128640; Candidatar-se Agora
+    </a>
+  </main>
+
+  <!-- PAINEL DIREITO: Resumo e outras vagas -->
+  <aside class="detalhe-aside">
+    <div class="aside-card">
+      <h3>&#128196; Resumo</h3>
+      <div class="resumo-item"><span>&#128179; Salário</span><strong id="d-salario"></strong></div>
+      <div class="resumo-item"><span>&#128203; Contrato</span><strong id="d-contrato"></strong></div>
+      <div class="resumo-item"><span>&#127968; Modalidade</span><strong id="d-modalidade"></strong></div>
+      <div class="resumo-item"><span>&#128197; Publicado</span><strong id="d-publicado"></strong></div>
+      <div class="resumo-item"><span>&#128101; Vagas</span><strong id="d-vagas"></strong></div>
+    </div>
+
+    <div class="aside-card">
+      <h3>&#128203; Outras Vagas</h3>
+      <div class="outras-vagas" id="outras-vagas"></div>
+    </div>
+  </aside>
+</div>
+
+<!-- Selecionar outra vaga -->
+<section class="section trocar-vaga-section">
+  <h2 class="section-title">Selecione uma Vaga para Ver os Detalhes</h2>
+  <div class="trocar-grid" id="trocar-grid"></div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="nav-icon">&#9670;</span>
+      <span class="nav-title">VAGA<span class="green">LOCAL</span></span>
+      <p>Conectando talentos locais desde 2025.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Navegação</h4>
+      <a href="index.html">Início</a>
+      <a href="vagas.html">Vagas</a>
+      <a href="cadastro.html">Cadastro</a>
+      <a href="login.html">Login</a>
+    </div>
+    <div class="footer-team">
+      <h4>Equipe – Grupo 01</h4>
+      <p>Everton Freitas de Araújo</p>
+      <p>Victor Huggo Ferreira Marcelino</p>
+      <p>Rodolfo Depieri Gindri</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 VagaLocal · ODS 8 – Trabalho Decente e Crescimento Econômico</p>
+  </div>
+</footer>
+
+<script>
+const vagas = {
+  dev: {
+    icon: "&#128187;",
+    titulo: "Desenvolvedor de Software",
+    empresa: "&#127970; TechCorp Solutions",
+    local: "&#128205; Remoto / Cornélio Procópio – PR",
+    badge: "new",
+    badgeText: "Novo",
+    tags: ["Full Stack", "CLT", "R$ 4.000–7.000/mês", "Remoto"],
+    descricao: "A TechCorp Solutions busca um Desenvolvedor de Software apaixonado por tecnologia para integrar nossa equipe de desenvolvimento. O profissional irá atuar no desenvolvimento e manutenção de sistemas web modernos, participando de todas as etapas do ciclo de desenvolvimento de software.",
+    requisitos: ["Graduação ou cursando Ciência da Computação, Sistemas de Informação ou áreas afins","Experiência com HTML, CSS e JavaScript (mínimo 1 ano)","Conhecimento em frameworks como React, Vue ou Angular","Noções de banco de dados SQL e NoSQL","Capacidade de trabalho em equipe e comunicação clara","Inglês técnico para leitura de documentação"],
+    beneficios: ["Vale Alimentação","Plano de Saúde","Home Office","Gympass","Curso de Inglês","13º Salário"],
+    responsabilidades: ["Desenvolver e manter aplicações web responsivas","Colaborar com a equipe de design na implementação de interfaces","Participar de revisões de código (code review)","Documentar código e processos técnicos","Contribuir em reuniões ágeis (Scrum/Kanban)"],
+    salario: "R$ 4.000 – R$ 7.000",
+    contrato: "CLT",
+    modalidade: "Remoto",
+    publicado: "Há 2 dias",
+    vagas: "2 vagas abertas"
+  },
+  pintor: {
+    icon: "&#127968;",
+    titulo: "Pintor de Casas e Edifícios",
+    empresa: "&#127970; ReformaMax Serviços",
+    local: "&#128205; Cornélio Procópio – PR",
+    badge: "urgent",
+    badgeText: "Urgente",
+    tags: ["Pintura", "PJ/CLT", "R$ 1.800–2.500/mês", "Presencial"],
+    descricao: "A ReformaMax Serviços contrata Pintor com experiência em pintura residencial e comercial. O profissional irá realizar trabalhos de pintura interna e externa, preparação de superfícies e aplicação de texturas em obras na região de Cornélio Procópio e cidades vizinhas.",
+    requisitos: ["Experiência comprovada em pintura (mínimo 2 anos)","Conhecimento em tipos de tintas e solventes","Habilidade com texturas, grafiato e pintura externa","CNH categoria B (desejável)","Disponibilidade para viagens curtas na região","Responsabilidade e pontualidade"],
+    beneficios: ["Vale Transporte","Vale Alimentação","Ferramentas fornecidas","EPI completo","Comissão por produtividade","Pagamento semanal"],
+    responsabilidades: ["Preparar superfícies para pintura (lixar, massar, corrigir)","Aplicar tintas, vernizes e texturas","Zelar pelo uso correto dos equipamentos","Garantir acabamento de qualidade","Manter o ambiente de trabalho organizado e seguro"],
+    salario: "R$ 1.800 – R$ 2.500",
+    contrato: "PJ ou CLT",
+    modalidade: "Presencial",
+    publicado: "Há 1 dia",
+    vagas: "3 vagas abertas"
+  },
+  admin: {
+    icon: "&#128188;",
+    titulo: "Assistente Administrativo",
+    empresa: "&#127970; Contábil Plus",
+    local: "&#128205; Bandeirantes – PR",
+    badge: "pop",
+    badgeText: "Popular",
+    tags: ["Administrativo", "CLT", "R$ 1.500–2.200/mês", "Híbrido"],
+    descricao: "A Contábil Plus, escritório de contabilidade com 15 anos de mercado, busca Assistente Administrativo organizado e proativo para apoio às rotinas do escritório. O profissional irá atuar no suporte administrativo, atendimento a clientes e organização de documentos.",
+    requisitos: ["Ensino médio completo (superior em andamento é diferencial)","Conhecimento em pacote Office (Word, Excel, Outlook)","Boa comunicação oral e escrita","Organização e atenção a detalhes","Experiência anterior em escritório (desejável)","Noções básicas de contabilidade/fiscal são um diferencial"],
+    beneficios: ["Vale Transporte","Vale Refeição","Plano de Saúde","Horário Flexível","Capacitação Interna","14º Salário"],
+    responsabilidades: ["Organizar e arquivar documentos físicos e digitais","Atender clientes presencialmente e por telefone","Auxiliar no controle de agenda e compromissos","Emitir notas fiscais e boletos","Apoiar processos de departamento pessoal"],
+    salario: "R$ 1.500 – R$ 2.200",
+    contrato: "CLT",
+    modalidade: "Híbrido",
+    publicado: "Há 3 dias",
+    vagas: "1 vaga aberta"
+  },
+  enfermeiro: {
+    icon: "&#10084;&#65039;",
+    titulo: "Técnico de Enfermagem",
+    empresa: "&#127970; Clínica VidaSaúde",
+    local: "&#128205; Cornélio Procópio – PR",
+    badge: "new",
+    badgeText: "Novo",
+    tags: ["Saúde", "CLT", "R$ 2.000–2.800/mês", "Presencial"],
+    descricao: "A Clínica VidaSaúde, referência em saúde ambulatorial na região, seleciona Técnico de Enfermagem para compor nossa equipe multiprofissional. O candidato irá atuar na assistência a pacientes em consultas ambulatoriais, curativos, coleta de exames e ações preventivas.",
+    requisitos: ["Curso Técnico em Enfermagem completo","Registro ativo no COREN-PR","Experiência mínima de 6 meses na área clínica","Conhecimento em primeiros socorros","Boa capacidade de comunicação com pacientes","Disponibilidade para escala (plantões)"],
+    beneficios: ["Plano de Saúde Completo","Vale Alimentação","Vale Transporte","Adicional Noturno","Uniformes fornecidos","Atualização Profissional"],
+    responsabilidades: ["Prestar cuidados básicos de enfermagem","Realizar curativos e administrar medicamentos","Auxiliar médicos durante consultas e procedimentos","Registrar prontuários e evoluções dos pacientes","Orientar pacientes sobre cuidados pós-consulta"],
+    salario: "R$ 2.000 – R$ 2.800",
+    contrato: "CLT",
+    modalidade: "Presencial",
+    publicado: "Há 1 dia",
+    vagas: "2 vagas abertas"
+  },
+  motorista: {
+    icon: "&#128663;",
+    titulo: "Motorista Entregador",
+    empresa: "&#127970; LogiRápido Transportes",
+    local: "&#128205; Região Norte do PR",
+    badge: "urgent",
+    badgeText: "Urgente",
+    tags: ["Logística", "PJ", "R$ 1.700–2.300/mês", "Presencial"],
+    descricao: "A LogiRápido Transportes, empresa consolidada no Norte do Paraná, contrata Motoristas Entregadores para rotas na região. O profissional será responsável pela entrega de mercadorias a clientes, garantindo agilidade, segurança e bom atendimento.",
+    requisitos: ["CNH categoria B válida (C é diferencial)","Experiência com entregas (mínimo 1 ano)","Conhecimento da região Norte do PR","Bom relacionamento interpessoal","Responsabilidade e pontualidade","Smartphone com acesso à internet para uso de aplicativo de rotas"],
+    beneficios: ["Ajuda de Custo","Vale Combustível","Seguro Veicular","Comissão por entrega","Adiantamento quinzenal","Equipamento de segurança"],
+    responsabilidades: ["Realizar entregas dentro dos prazos estabelecidos","Conferir mercadorias antes do carregamento","Manter o veículo limpo e em bom estado","Registrar comprovantes de entrega","Atender clientes com cordialidade"],
+    salario: "R$ 1.700 – R$ 2.300",
+    contrato: "PJ",
+    modalidade: "Presencial",
+    publicado: "Há 4 horas",
+    vagas: "5 vagas abertas"
+  },
+  cozinheiro: {
+    icon: "&#127860;",
+    titulo: "Auxiliar de Cozinha",
+    empresa: "&#127970; Restaurante Sabor da Terra",
+    local: "&#128205; Uraí – PR",
+    badge: "pop",
+    badgeText: "Popular",
+    tags: ["Alimentação", "CLT", "R$ 1.400–1.800/mês", "Presencial"],
+    descricao: "O Restaurante Sabor da Terra, tradicional no ramo de alimentação da cidade de Uraí, seleciona Auxiliar de Cozinha para compor nossa equipe. O candidato irá apoiar nas atividades de preparo, higienização e organização da cozinha do restaurante.",
+    requisitos: ["Ensino fundamental completo","Experiência mínima de 6 meses em cozinha (desejável)","Conhecimento de boas práticas de higiene alimentar","Disposição física para trabalho em ambiente quente","Assiduidade e responsabilidade","Disponibilidade para trabalhar fins de semana"],
+    beneficios: ["Vale Transporte","Alimentação no local","Uniforme fornecido","Folga semanal garantida","13º Salário","Desconto em refeições"],
+    responsabilidades: ["Auxiliar no preparo e finalização de pratos","Higienizar utensílios, equipamentos e a cozinha","Armazenar alimentos seguindo normas sanitárias","Apoiar o cozinheiro chefe nas atividades diárias","Controlar estoque de ingredientes básicos"],
+    salario: "R$ 1.400 – R$ 1.800",
+    contrato: "CLT",
+    modalidade: "Presencial",
+    publicado: "Há 5 dias",
+    vagas: "2 vagas abertas"
+  },
+  eletricista: {
+    icon: "&#9889;",
+    titulo: "Eletricista Residencial",
+    empresa: "&#127970; EletroServ",
+    local: "&#128205; Cornélio Procópio – PR",
+    badge: "new",
+    badgeText: "Novo",
+    tags: ["Elétrica", "PJ", "R$ 2.200–3.500/mês", "Presencial"],
+    descricao: "A EletroServ, empresa especializada em instalações e manutenções elétricas, busca Eletricista Residencial qualificado para atuar em projetos residenciais e pequenas obras comerciais na cidade de Cornélio Procópio e região.",
+    requisitos: ["Curso técnico em elétrica ou experiência comprovada","NR10 (Norma Regulamentadora de Eletricidade) atualizada","Experiência em instalações residenciais (mínimo 2 anos)","Leitura e interpretação de projetos elétricos","CNH categoria B","Responsabilidade e comprometimento com segurança"],
+    beneficios: ["Ferramentas fornecidas","Vale Combustível","EPI completo","Comissão sobre projetos","Pagamento quinzenal","Parceria em projetos maiores"],
+    responsabilidades: ["Instalar e manter sistemas elétricos residenciais","Identificar e corrigir falhas em instalações existentes","Dimensionar e instalar quadros de distribuição","Cumprir normas de segurança (NR10)","Orientar clientes sobre segurança elétrica"],
+    salario: "R$ 2.200 – R$ 3.500",
+    contrato: "PJ",
+    modalidade: "Presencial",
+    publicado: "Há 6 horas",
+    vagas: "1 vaga aberta"
+  }
+};
+
+function getParam() {
+  const p = new URLSearchParams(window.location.search);
+  return p.get("id") || "dev";
+}
+
+function renderVaga(id) {
+  const v = vagas[id];
+  if (!v) return;
+
+  document.title = v.titulo + " – Vaga Local";
+  document.getElementById("bc-title").textContent = v.titulo;
+  document.getElementById("d-icon").innerHTML = v.icon;
+  document.getElementById("d-titulo").textContent = v.titulo;
+  document.getElementById("d-empresa").innerHTML = v.empresa;
+  document.getElementById("d-local").innerHTML = v.local;
+  document.getElementById("d-salario").textContent = v.salario;
+  document.getElementById("d-contrato").textContent = v.contrato;
+  document.getElementById("d-modalidade").textContent = v.modalidade;
+  document.getElementById("d-publicado").textContent = v.publicado;
+  document.getElementById("d-vagas").textContent = v.vagas;
+  document.getElementById("d-descricao").textContent = v.descricao;
+
+  const badge = document.getElementById("d-badge");
+  badge.textContent = v.badgeText;
+  badge.className = "vc-badge " + v.badge;
+
+  const tagsEl = document.getElementById("d-tags");
+  tagsEl.innerHTML = v.tags.map(t => `<span>${t}</span>`).join("");
+
+  const reqEl = document.getElementById("d-requisitos");
+  reqEl.innerHTML = v.requisitos.map(r => `<li>&#9670; ${r}</li>`).join("");
+
+  const respEl = document.getElementById("d-responsabilidades");
+  respEl.innerHTML = v.responsabilidades.map(r => `<li>&#9670; ${r}</li>`).join("");
+
+  const benEl = document.getElementById("d-beneficios");
+  benEl.innerHTML = v.beneficios.map(b => `<div class="ben-item">&#10003; ${b}</div>`).join("");
+
+  // Outras vagas
+  const outrasEl = document.getElementById("outras-vagas");
+  const keys = Object.keys(vagas).filter(k => k !== id).slice(0, 4);
+  outrasEl.innerHTML = keys.map(k =>
+    `<a href="vaga-detalhe.html?id=${k}" class="outra-vaga-link">
+      <span>${vagas[k].icon}</span>
+      <span>${vagas[k].titulo}</span>
+    </a>`
+  ).join("");
+
+  // Grid de seleção
+  const trocarEl = document.getElementById("trocar-grid");
+  trocarEl.innerHTML = Object.keys(vagas).map(k =>
+    `<a href="vaga-detalhe.html?id=${k}" class="trocar-card ${k === id ? 'trocar-active' : ''}">
+      <span class="trocar-icon">${vagas[k].icon}</span>
+      <span class="trocar-titulo">${vagas[k].titulo}</span>
+      <span class="trocar-empresa">${vagas[k].empresa.replace(/&#127970; /,"")}</span>
+    </a>`
+  ).join("");
+}
+
+renderVaga(getParam());
+</script>
+
+</body>
+</html>
