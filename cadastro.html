@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro – Vaga Local</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="acessibilidade.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body class="auth-page">
+
+<nav class="navbar">
+  <div class="nav-brand">
+    <span class="nav-icon">&#9670;</span>
+    <span class="nav-title">VAGA<span class="green">LOCAL</span></span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Início</a></li>
+    <li><a href="vagas.html">Vagas</a></li>
+    <li><a href="cadastro.html" class="active">Cadastro</a></li>
+    <li><a href="sobre.html">Sobre</a></li>
+    <li><a href="login.html" class="btn-nav">Entrar</a></li>
+  </ul>
+</nav>
+
+<div class="auth-container">
+  <div class="auth-left">
+    <div class="auth-left-content">
+      <div class="auth-logo">
+        <span class="nav-icon big-icon">&#9670;</span>
+        <span class="nav-title big-title">VAGA<span class="green">LOCAL</span></span>
+      </div>
+      <h2>Crie sua conta grátis!</h2>
+      <p>Cadastre-se e tenha acesso a dezenas de vagas locais que combinam com o seu perfil.</p>
+      <div class="auth-features">
+        <div class="af-item">&#9989; Cadastro 100% gratuito</div>
+        <div class="af-item">&#9989; Vagas atualizadas diariamente</div>
+        <div class="af-item">&#9989; Receba alertas de vagas por e-mail</div>
+        <div class="af-item">&#9989; Currículo digital no seu perfil</div>
+      </div>
+      <div class="auth-ods">
+        <span>&#127760;</span>
+        <span>Alinhado ao ODS 8 – Trabalho Decente</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="auth-right">
+    <div class="auth-card auth-card-wide">
+      <h1 class="auth-title">&#128100; Criar Conta</h1>
+      <p class="auth-sub">Já tem conta? <a href="login.html">Entrar agora</a></p>
+
+      <!-- Campo 1 -->
+      <div class="form-group">
+        <label for="nome">&#128100; Nome Completo <span class="req">*</span></label>
+        <input type="text" id="nome" placeholder="Seu nome completo" class="form-input"/>
+      </div>
+
+      <!-- Campo 2 -->
+      <div class="form-group">
+        <label for="email">&#128231; E-mail <span class="req">*</span></label>
+        <input type="email" id="email" placeholder="seu@email.com" class="form-input"/>
+      </div>
+
+      <!-- Campo 3 -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="senha">&#128273; Senha <span class="req">*</span></label>
+          <div class="input-wrap">
+            <input type="password" id="senha" placeholder="Mínimo 8 caracteres" class="form-input"/>
+            <button class="eye-btn" onclick="toggleSenha('senha')" title="Ver senha">&#128065;</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="confirma">&#128274; Confirmar Senha <span class="req">*</span></label>
+          <div class="input-wrap">
+            <input type="password" id="confirma" placeholder="Repita a senha" class="form-input"/>
+            <button class="eye-btn" onclick="toggleSenha('confirma')" title="Ver senha">&#128065;</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Campo 4 -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="cidade">&#128205; Cidade <span class="req">*</span></label>
+          <select id="cidade" class="form-input">
+            <option value="">Selecione sua cidade</option>
+            <option>Cornélio Procópio</option>
+            <option>Bandeirantes</option>
+            <option>Uraí</option>
+            <option>Leópolis</option>
+            <option>Abatiá</option>
+            <option>Sertaneja</option>
+            <option>Ribeirão do Pinhal</option>
+            <option>Outra cidade</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="telefone">&#128222; Telefone</label>
+          <input type="tel" id="telefone" placeholder="(43) 9 9999-9999" class="form-input"/>
+        </div>
+      </div>
+
+      <!-- Campo 5 -->
+      <div class="form-group">
+        <label for="area">&#128188; Área de Interesse <span class="req">*</span></label>
+        <select id="area" class="form-input">
+          <option value="">Selecione sua área</option>
+          <option>Tecnologia / Desenvolvimento</option>
+          <option>Construção Civil / Reformas</option>
+          <option>Administrativo / Financeiro</option>
+          <option>Saúde / Enfermagem</option>
+          <option>Alimentação / Gastronomia</option>
+          <option>Logística / Transporte</option>
+          <option>Educação / Ensino</option>
+          <option>Comércio / Varejo</option>
+          <option>Elétrica / Hidráulica</option>
+          <option>Outra área</option>
+        </select>
+      </div>
+
+      <!-- Campo 6 - extra -->
+      <div class="form-group">
+        <label for="escolaridade">&#127979; Escolaridade</label>
+        <select id="escolaridade" class="form-input">
+          <option value="">Selecione seu nível</option>
+          <option>Fundamental Incompleto</option>
+          <option>Fundamental Completo</option>
+          <option>Médio Incompleto</option>
+          <option>Médio Completo</option>
+          <option>Superior em Andamento</option>
+          <option>Superior Completo</option>
+          <option>Pós-Graduação</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="termos"/> Concordo com os <a href="#">Termos de Uso</a> e <a href="#">Política de Privacidade</a> <span class="req">*</span>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="notif"/> Desejo receber notificações de novas vagas por e-mail
+        </label>
+      </div>
+
+      <button class="btn-primary btn-full" onclick="cadastrar()">
+        &#128640; Criar Minha Conta
+      </button>
+
+      <div class="login-msg" id="cad-msg" style="display:none;"></div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="nav-icon">&#9670;</span>
+      <span class="nav-title">VAGA<span class="green">LOCAL</span></span>
+      <p>Conectando talentos locais desde 2025.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Navegação</h4>
+      <a href="index.html">Início</a>
+      <a href="vagas.html">Vagas</a>
+      <a href="login.html">Login</a>
+      <a href="sobre.html">Sobre</a>
+    </div>
+    <div class="footer-team">
+      <h4>Equipe – Grupo 01</h4>
+      <p>Everton Freitas de Araújo</p>
+      <p>Victor Huggo Ferreira Marcelino</p>
+      <p>Rodolfo Depieri Gindri</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 VagaLocal · ODS 8 – Trabalho Decente e Crescimento Econômico</p>
+  </div>
+</footer>
+
+<script>
+function toggleSenha(id) {
+  const s = document.getElementById(id);
+  s.type = s.type === "password" ? "text" : "password";
+}
+function cadastrar() {
+  const nome = document.getElementById("nome").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const senha = document.getElementById("senha").value.trim();
+  const confirma = document.getElementById("confirma").value.trim();
+  const cidade = document.getElementById("cidade").value;
+  const area = document.getElementById("area").value;
+  const termos = document.getElementById("termos").checked;
+  const msg = document.getElementById("cad-msg");
+  msg.style.display = "block";
+
+  if (!nome || !email || !senha || !cidade || !area) {
+    msg.className = "login-msg msg-error";
+    msg.textContent = "⚠️ Preencha todos os campos obrigatórios (*)";
+    return;
+  }
+  if (senha !== confirma) {
+    msg.className = "login-msg msg-error";
+    msg.textContent = "⚠️ As senhas não coincidem. Verifique e tente novamente.";
+    return;
+  }
+  if (senha.length < 8) {
+    msg.className = "login-msg msg-error";
+    msg.textContent = "⚠️ A senha deve ter pelo menos 8 caracteres.";
+    return;
+  }
+  if (!termos) {
+    msg.className = "login-msg msg-error";
+    msg.textContent = "⚠️ Você deve aceitar os Termos de Uso para continuar.";
+    return;
+  }
+  msg.className = "login-msg msg-success";
+  msg.innerHTML = "&#10003; Cadastro realizado com sucesso! Redirecionando para o login...";
+  setTimeout(() => window.location.href = "login.html", 2500);
+}
+</script>
+
+</body>
+</html>
